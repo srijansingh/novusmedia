@@ -1,0 +1,130 @@
+*{
+    margin:0px;
+    font-family: Roboto Slab;
+}
+body{
+    background:#4b5cc4;
+}
+.container{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    box-shadow:1px 1px 2px 1px lightblue;
+    padding:50px;
+    border-radius:20px;
+}
+.container h1{
+    position:relative;
+    text-align:center;
+    color:lightblue;
+}
+.container form{
+    position:relative;
+    top:30px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+}
+
+.container form .form-group{
+    position:relative;
+    width:auto;
+    display:flex;
+    flex-direction:column;
+    margin:10px 0px;
+}
+
+.container form .form-group label{
+    position:absolute;
+    top:0px;
+    left:0px;
+    color:white;
+}
+
+.container form .form-group input[type="text"],input[type="submit"],select{
+    position:relative;
+    font-size:18px;
+    padding:8px 15px;
+    border:none;
+    margin:3px 0px;
+    background:white;
+    border-radius:50px;
+    outline:none;
+}
+
+.container form .form-group textarea{
+    position:relative;
+    font-size:18px;
+    padding:6px 15px;
+    margin:5px 0px;
+    border:none;
+    background:white;
+    border-radius:10px;
+    outline:none;
+    resize:none;
+    height:100px;
+}
+
+.container form .form-group input[type="submit"]{
+    background:#F38F0D;
+    color:white;
+    width:50%;
+    left:50%;
+    transform:translate(-50%,0%);
+}
+input[type='file'] {
+    color: transparent;
+
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.custom-file-input::before {
+    content: 'Select some files';
+    display: inline-block;
+    background:white;
+    color:grey;
+
+    border-radius: 18px;
+    padding: 8px 20px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-size: 15px;
+}
+.custom-file-input:hover::before {
+    border-color: black;
+    outline:none;
+}
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+
+@media(max-width:768px)
+{
+    body{
+        background:#4b5cc4;
+    }
+    .container{
+        position:absolute;
+        top:50px;
+        left:50%;
+        transform:translate(-50%,0%);
+        width:80%;
+        padding:0px;
+        box-shadow:none;
+    }
+
+    .container form{
+        position:relative;
+        top:60px;
+        width:100%;
+        display:flex;
+        flex-direction:column;
+    }
+}

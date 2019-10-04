@@ -1,0 +1,237 @@
+*{
+    margin:0px;
+    padding:0px;
+    scroll-behavior: smooth;
+    font-family:montserrat;
+}
+
+body{
+    background:#2E2F3A;
+}
+.header{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    padding:20px 0px;
+}
+
+.header .navbar{
+    position:relative;
+    float:right;
+    margin:0px 20px;
+}
+
+.header .navbar a{
+    position:relative;
+    font-family:montserrat;
+    padding:8px 30px;
+    margin:0px 10px;
+    text-decoration:none;
+    border-radius:20px;
+    font-size:16px;
+    color:#a6a6a6;
+}
+.header .navbar a.active{
+    background:linear-gradient(45deg,#F2B90A,white);
+    color:black;
+}
+
+.menubar{
+    position:absolute;
+
+    top:0px;
+    left:0px;
+    width:30px;
+    height:30px;
+
+    margin:10px;
+
+    display:none;
+}
+.menubar span{
+    position:relative;
+    width:30px;
+    height:5px;
+    border-radius:5px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+
+.main{
+    position:relative;
+    top:60px;
+}
+.container{
+    position:relative;
+
+
+}
+.container img{
+    position:relative;
+    height:600px;
+    left:40%;
+    transform:translate(-50%,-0);
+    width:auto;
+    -webkit-animation: mymove 3s 1; /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: -3s; /* Safari 4.0 - 8.0 */
+    animation: mymove 3s 1;
+    animation-delay: -1s;
+
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    from {left: 0px;}
+    to {left: 200px;}
+}
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 40%;}
+}
+.aboutme{
+    position:relative;
+    margin:20px 0px;
+    width:100%;
+    text-align:center;
+}
+
+.aboutme h1{
+    color:white;
+}
+
+.about{
+    position:relative;
+    margin:20px 0px;
+    display:flex;
+    width:70%;
+    left:15%;
+
+    padding:30px;
+}
+
+.about .para{
+    position:relative;
+    padding:40px 50px;
+    text-align:left;
+    font-size:18px;
+    color:white;
+    line-height:28px;
+}
+
+.portfolio{
+    position:relative;
+    margin:20px 0px;
+
+}
+.portfolio h1{
+    text-align:center;
+    color:white;
+}
+.portfolio-album{
+    position:relative;
+    margin:50px 0px;
+    left:50%;
+    transform:translate(-50%,0%);
+    width:60%;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap:30px;
+
+}
+
+.portfolio-album img{
+    position:relative;
+    max-width:380px;
+    width:100%;
+
+}
+
+
+.footer{
+    position:relative;
+    width:100%;
+    bottom:0px;
+    margin-top:150px;
+
+    background-image:url('../images/footer.png');
+    background-repeat:none;
+    padding:70px 0px;
+}
+
+.footer .address{
+    position:relative;
+    margin:0px 30px;
+    color:white;
+    display:flex;
+    flex-direction:column;
+}
+.footer .address span{
+    position:relative;
+    margin:15px 0px;
+}
+
+@media(max-width:768px){
+    .navbar{
+        display:none;
+
+
+    }
+    .navbar a{
+        position:relative;
+        font-family:montserrat;
+        max-width:150px;
+        width:100%;
+        padding:8px 30px;
+        margin:0px 10px;
+        text-decoration:none;
+        float:left;
+        display:flex;
+        flex-direction:column;
+        top:30px;
+        border-radius:20px;
+        font-size:16px;
+        color:#a6a6a6;
+    }
+    .menubar{
+        display:flex;
+        flex-direction:column;
+    }
+    .container img{
+        position:relative;
+        height:400px;
+        left:0%;
+        transform:translate(0%,0%);
+        width:100%;
+    }
+    .about{
+        display:flex;
+        flex-direction:column;
+        width:100%;
+        left:0%;
+        padding:30px 0px;
+    }
+
+    .portfolio-album{
+        position:relative;
+        margin:50px 0px;
+        left:50%;
+        transform:translate(-50%,0%);
+        width:60%;
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap:20px;
+
+    }
+
+    .portfolio-album img{
+        position:relative;
+        max-width:300px;
+        width:100%;
+
+    }
+
+}
+
