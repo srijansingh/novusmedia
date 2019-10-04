@@ -10,15 +10,11 @@
         function show(){
             var menu=document.getElementById('menu');
             var navbar=document.getElementById('navbar');
-
             navbar.style.display="block";
-
         }
-
         function hide(){
             var menu=document.getElementById('menu');
             var navbar=document.getElementById('navbar');
-
             navbar.style.display="none";
         }
     </script>

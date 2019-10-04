@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Album;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,7 +15,9 @@ class UserController extends Controller
     public function index()
     {
         //
-        return view('user.index');
+        return view('main.index')
+            ->with('album',Album::all())
+            ->with('')
     }
 
     /**
