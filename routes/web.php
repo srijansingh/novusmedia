@@ -21,11 +21,7 @@ Route::get('/admin',function(){
 });*/
 
 
-Route::resource('admin/album','AdminController');
 
-Route::resource('admin/gallery','GalleryController');
-
-Route::resource('admin/member','MemberController');
 
 Route::resource('/','UserController');
 
@@ -34,4 +30,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::resource('')
+Route::group(['middleware'=>'auth'],function(){
+
+    Route::resource('admin/album','AdminController');
+
+    Route::resource('admin/gallery','GalleryController');
+
+    Route::resource('admin/member','MemberController');
+
+});
