@@ -9,6 +9,8 @@ class Album extends Model
 {
 
     protected $table = 'albums';
-    protected $fillable = ['id','albumname','albumdescription','created_at','updated_at'];
+    protected $fillable = [
+        'id','albumname','albumdescription','albumimage','created_at','updated_at'
+    ];
 
 }

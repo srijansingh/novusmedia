@@ -51,13 +51,13 @@ class AdminController extends Controller
         //
         $input = $request->all();
 
-        if($file=$request->file('image'))
+/*        if($file=$request->file('file'))
         {
             $name=$file->getClientOriginalName();
             $file->move("album",$name);
-            $input['image']=$name;
+            $input['albumimage']=$name;
 
-        }
+        }*/
         Album::create($input);
         return redirect('album/create');
     }

@@ -16,8 +16,8 @@ class UserController extends Controller
     {
         //
         return view('main.index')
-            ->with('album',Album::all())
-            ->with('')
+            ->with('album',Album::all());
+
     }
 
     /**

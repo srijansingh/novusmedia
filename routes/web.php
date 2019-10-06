@@ -27,15 +27,15 @@ Route::resource('/','UserController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::group(['middleware'=>'auth'],function(){
+    Route::resource('/album','AdminController');
 
-    Route::resource('admin/album','AdminController');
+    Route::resource('/gallery','GalleryController');
 
-    Route::resource('admin/gallery','GalleryController');
+    Route::resource('/member','MemberController');
 
-    Route::resource('admin/member','MemberController');
+    Route::get('/home', 'HomeController@index')->name('home');
 
-});
+    Route::resource('/customer','CustomerController');
+
