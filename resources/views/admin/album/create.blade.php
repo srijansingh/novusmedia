@@ -66,8 +66,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Manage:</h6>
-                    <a class="collapse-item" href="{{route('album.create')}}">Add Album</a>
-                    <a class="collapse-item" href="{{route('album.index')}}">View Album</a>
+                    <a class="collapse-item" href="{{route('albums.create')}}">Add Album</a>
+                    <a class="collapse-item" href="{{route('albums.index')}}">View Album</a>
                 </div>
             </div>
         </li>
@@ -169,7 +169,7 @@
                 <!-- Page Heading -->
                 <h1 class="h3 mb-4 text-gray-800">Create Album</h1>
 
-                <form action="/album" method="post" enctype="multipart/form-data">
+                <form action="/albums" method="post" enctype="multipart/form-data">
                     <div class="column">
 
                         @csrf

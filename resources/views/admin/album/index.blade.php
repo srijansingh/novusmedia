@@ -67,8 +67,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Manage:</h6>
-                    <a class="collapse-item" href="{{route('album.create')}}">Add Album</a>
-                    <a class="collapse-item" href="{{route('album.index')}}">View Album</a>
+                    <a class="collapse-item" href="{{route('albums.create')}}">Add Album</a>
+                    <a class="collapse-item" href="{{route('albums.index')}}">View Album</a>
                 </div>
             </div>
         </li>
@@ -195,10 +195,10 @@
                                 @foreach( $album as $albums)
                                     <tr>
 
-                                        <td>{{$albums->name}}</td>
+                                        <td>{{$albums->albumname}}</td>
 
                                         <td>
-                                            <a href="{{route('sponsor.show',$albums->id)}}" class="btn btn-success">
+                                            <a href="{{route('albums.show',$albums->id)}}" class="btn btn-success">
                                                 <i class="fas fa-eye"> &nbsp;&nbsp; Details</i>
                                             </a>
                                         </td>

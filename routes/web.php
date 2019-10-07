@@ -28,8 +28,7 @@ Route::resource('/','UserController');
 Auth::routes();
 
 
-
-    Route::resource('/album','AdminController');
+    Route::resource('/albums','AdminController');
 
     Route::resource('/gallery','GalleryController');
 
@@ -38,4 +37,6 @@ Auth::routes();
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::resource('/customer','CustomerController');
+
+
 

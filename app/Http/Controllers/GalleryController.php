@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Album;
 use App\Gallery;
+use App\Member;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -30,11 +31,12 @@ class GalleryController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function create()
-    {
-        //
+    public function create(){
 
-        return view('admin.gallery.create');
+
+        return view('admin.gallery.create')
+        ->with('album',Album::all())
+        ->with('member',Member::all());
     }
 
     /*
@@ -47,17 +49,16 @@ class GalleryController extends Controller
 
     public function store(Request $request)
     {
-        //
+
         $input = $request->all();
 
-        if($file=$request->file('image'))
+        if($file=$request->file('file'))
         {
             $name=$file->getClientOriginalName();
             $file->move("gallery",$name);
             $input['image']=$name;
-
         }
-        Album::create($input);
+        Gallery::create($input);
         return redirect('gallery/create');
     }
 
@@ -73,7 +74,7 @@ class GalleryController extends Controller
     {
         //
         $gallery=Gallery::findOrFail($id);
-        return view('admin.gallery.show.',compact('gallery'));
+        return view('admin.gallery.show',compact('gallery'));
 
     }
 
@@ -88,8 +89,11 @@ class GalleryController extends Controller
     public function edit($id)
     {
         //
-        $gallery=Gallery::findOrFail($id);
-        return view('admin.gallery.edit.',compact('gallery'));
+
+        return view('admin.gallery.edit')
+            ->with('gallery',Gallery::findOrFail($id))
+            ->with('album',Album::all())
+            ->with('member',Member::all());
     }
 
     /*
@@ -106,7 +110,7 @@ class GalleryController extends Controller
         $gallery=Gallery::findOrFail($id);
         $gallery->update($request->all());
 
-        return redirect('admin/gallery');
+        return redirect('/gallery');
     }
 
     /*
@@ -121,7 +125,7 @@ class GalleryController extends Controller
         //
         $gallery=Gallery::findOrFail($id);
         $gallery->delete($id);
-        return redirect('/admin');
+        return redirect('/gallery');
 
     }
 }

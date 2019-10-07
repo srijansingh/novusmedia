@@ -67,8 +67,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Manage:</h6>
-                    <a class="collapse-item" href="{{route('album.create')}}">Add Album</a>
-                    <a class="collapse-item" href="{{route('album.index')}}">View Album</a>
+                    <a class="collapse-item" href="{{route('albums.create')}}">Add Album</a>
+                    <a class="collapse-item" href="{{route('albums.index')}}">View Album</a>
                 </div>
             </div>
         </li>
@@ -180,22 +180,24 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
 
-                                <tr><th>Album ID</th><td>{{$album->id}}}</td><td colspan="6">{{$album->image}}</td></tr>
-                                <tr><th>Album Name</th><td>{{$album->albumname}}}</td></tr>
-                                <tr><th>Album Description</th><td>{{$album->albumdescription}}}</td></tr>
-                                <tr><th>Action</th>
-                                    <td>
-                                        <form action="/album" method="post">
+                                <tr><th>Album ID</th><td>{{$album->id}}</td></tr>
+                                <tr><th>Album Name</th><td>{{$album->albumname}}</td></tr>
+                                <tr><th>Album Description</th><td>{{$album->albumdescription}}</td></tr>
+                                <tr><th>
+                                        <form action="/albums/{{$album->id}}" method="post">
                                             @csrf
                                             <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
 
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <button class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></button>
+                                            <button class="btn btn-danger btn"><i class="fas fa-trash">&nbsp;&nbsp;Delete</i></button>
                                         </form>
-                                        <a href="{{route('album.edit',$album->id)}}" class="btn btn-primary btn-circle">
-                                            <i class="fas fa-edit"></i>
+                                    </th>
+                                    <th>
+                                        <a href="{{route('albums.edit',$album->id)}}" class="btn btn-primary btn">
+                                            <i class="fas fa-edit">&nbsp;&nbsp;Edit</i>
                                         </a>
-                                    </td>
+
+                                    </th>
                                 </tr>
                                 </tr>
                                 </thead>

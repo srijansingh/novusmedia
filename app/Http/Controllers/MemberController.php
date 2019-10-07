@@ -71,8 +71,8 @@ class MemberController extends Controller
     public function show($id)
     {
         //
-        $member=Gallery::findOrFail($id);
-        return view('admin.member.show.',compact('member'));
+        $member=Member::findOrFail($id);
+        return view('admin.member.show',compact('member'));
 
     }
 
@@ -88,7 +88,7 @@ class MemberController extends Controller
     {
         //
         $member=Member::findOrFail($id);
-        return view('admin.member.edit.',compact('member'));
+        return view('admin.member.edit',compact('member'));
     }
 
     /*
@@ -105,7 +105,7 @@ class MemberController extends Controller
         $member=Member::findOrFail($id);
         $member->update($request->all());
 
-        return redirect('admin/member');
+        return redirect('/member');
     }
 
     /*
@@ -120,7 +120,7 @@ class MemberController extends Controller
         //
         $member=Member::findOrFail($id);
         $member->delete($id);
-        return redirect('/admin');
+        return redirect('/member');
 
     }
 }

@@ -63,8 +63,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Manage:</h6>
-                    <a class="collapse-item" href="{{route('album.create')}}">Add Album</a>
-                    <a class="collapse-item" href="{{route('album.index')}}">View Album</a>
+                    <a class="collapse-item" href="{{route('albums.create')}}">Add Album</a>
+                    <a class="collapse-item" href="{{route('albums.index')}}">View Album</a>
                 </div>
             </div>
         </li>
@@ -111,7 +111,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white  mb-5 shadow-sm">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/home') }}">
-                        Darpan
+                        Novusmedia
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
@@ -164,17 +164,17 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">Add Event Details</h1>
+                <h1 class="h3 mb-4 text-gray-800">{{$album->albumname}}</h1>
 
 
-                <form action="/sponsor/{{$sponsor->id}}" method="post" >
+                <form action="/albums/{{$album->id}}" method="post" >
                     <div class="row">
                         @csrf
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
                         <div class="col-lg-4 form-group">
-                            <label>Event Name*</label>
-                            <input type="text" name="name" class="form-control" value="{{$sponsor->name}}">
+                            <label>Album Name*</label>
+                            <input type="text" name="name" class="form-control" value="{{$album->albumname}}">
                         </div>
 
                         {{--                        <div class="col-lg-4 form-group">--}}
@@ -203,7 +203,7 @@
 
                     {{--                    </div>--}}
                     <div class=" form-group">
-                        <input type="submit" name="pic" class="btn btn-primary" value="Update Now" style="float:right;">
+                        <input type="submit" name="pic" class="btn btn-primary" value="Update Now" style="">
                     </div>
             </div>
             </form>

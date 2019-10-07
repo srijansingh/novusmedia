@@ -33,21 +33,21 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/home')}}">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+
             </div>
-            <div class="sidebar-brand-text mx-3">Admin</div>
+            <div class="sidebar-brand-text mx-3">Novus Media</div>
         </a>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="{{url('/home')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
+                <span>Media Panel</span></a>
         </li>
 
         <!-- Divider -->
@@ -62,13 +62,13 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-tasks"></i>
-                <span>Manage Events</span>
+                <span>Album</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Manage:</h6>
-                    <a class="collapse-item" href="{{route('event.create')}}">Add New Event</a>
-                    <a class="collapse-item" href="{{route('event.index')}}">View Events</a>
+                    <h6 class="collapse-header">Manage:</h6>
+                    <a class="collapse-item" href="{{route('albums.create')}}">Add Album</a>
+                    <a class="collapse-item" href="{{route('albums.index')}}">View Album</a>
                 </div>
             </div>
         </li>
@@ -76,13 +76,13 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                 <i class="fas fa-fw fa-wrench"></i>
-                <span>Manage Sponsorships</span>
+                <span>Photos</span>
             </a>
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Manage:</h6>
-                    <a class="collapse-item" href="{{route('sponsor.create')}}">Add Sponsors</a>
-                    <a class="collapse-item" href="{{route('sponsor.index')}}">View Sponsors</a>
+                    <h6 class="collapse-header">Manage:</h6>
+                    <a class="collapse-item" href="{{route('gallery.create')}}">Add Photos</a>
+                    <a class="collapse-item" href="{{route('gallery.index')}}">View Photos</a>
                 </div>
             </div>
         </li>
@@ -90,36 +90,17 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapseUtilities">
                 <i class="fas fa-fw fa-wrench"></i>
-                <span>Social Media</span>
+                <span>Regisrations</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Manage:</h6>
-                    <a class="collapse-item" href="{{route('media.index')}}">Social Links</a>
+                    <h6 class="collapse-header">Manage:</h6>
+                    <a class="collapse-item" href="{{route('customer.index')}}">Customers</a>
                 </div>
             </div>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Students</span>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Manage:</h6>
-                    <a class="collapse-item" href="{{route('student.index')}}">Registrations</a>
-                </div>
-            </div>
-        </li>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-            <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
 
     </ul>
     <!-- End of Sidebar -->
@@ -134,7 +115,6 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white  mb-5 shadow-sm">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/home') }}">
-                        Darpan
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
@@ -187,7 +167,7 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Sponsorship</h1>
+                <h1 class="h3 mb-2 text-gray-800">Novus Media Team</h1>
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
@@ -198,35 +178,32 @@
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
-                                <tr><th>Fac</th><tr></tr>
 
+                                <tr><th>Member ID</th><td>{{$member->id}}</td></tr>
+                                <tr><th>Member Name</th><td>{{$member->membername}}</td></tr>
+                                <tr><th>Member Desription</th><td>{{$member->aboutmember}}</td></tr>
+                                <tr><th>Member Tag</th><td>{{$member->membertag}}</td></tr>
+                                <tr><th>
+                                        <form action="/member/{{$member->id}}" method="post">
+                                            @csrf
 
-                                <th>Image</th>
-                                <th>Action</th>
+                                            <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button class="btn btn-danger btn"><i class="fas fa-trash">&nbsp;&nbsp;Delete</i></button>
+                                        </form>
+                                    </th>
+                                    <th>
+                                        <a href="{{route('member.edit',$member->id)}}" class="btn btn-primary btn">
+                                            <i class="fas fa-edit">&nbsp;&nbsp;Edit</i>
+                                        </a>
+
+                                    </th>
+                                </tr>
                                 </tr>
                                 </thead>
 
-                                <tbody>
 
-                                <tr>
-                                    <td>{{$sponsor->id}}</td>
-                                    <td>{{$sponsor->name}}</td>
-                                    <td>Not Found</td>
-                                    <td> <a href="#" onclick="confirm('Are You sure want to delete')" class="btn btn-danger btn-circle">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                        {{--                                            <a href="{{route('event.edit',$event->id)}}" class="btn btn-primary btn-circle">--}}
-                                        {{--                                                <i class="fas fa-edit"></i>--}}
-                                        {{--                                            </a>--}}
-                                        <a href="{{route('sponsor.edit',$sponsor->id)}}" class="btn btn-primary btn-circle">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-
-
-
-                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -242,7 +219,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2019</span>
+                    <span>Powered By Novus</span>
                 </div>
             </div>
         </footer>

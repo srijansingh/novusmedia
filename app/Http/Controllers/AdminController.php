@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('auth');
-    }
+    }*/
 
     /**
      * Display a listing of the resource.
@@ -51,15 +51,15 @@ class AdminController extends Controller
         //
         $input = $request->all();
 
-/*        if($file=$request->file('file'))
+        if($file=$request->file('file'))
         {
             $name=$file->getClientOriginalName();
             $file->move("album",$name);
             $input['albumimage']=$name;
 
-        }*/
+        }
         Album::create($input);
-        return redirect('album/create');
+        return redirect('albums/create');
     }
 
     /*
@@ -74,7 +74,7 @@ class AdminController extends Controller
     {
         //
         $album=Album::findOrFail($id);
-        return view('admin.album.show.',compact('album'));
+        return view('admin.album.show',compact('album'));
 
     }
 
@@ -90,7 +90,7 @@ class AdminController extends Controller
     {
         //
         $album=Album::findOrFail($id);
-        return view('admin.album.edit.',compact('album'));
+        return view('admin.album.edit',compact('album'));
     }
 
     /*
@@ -107,7 +107,7 @@ class AdminController extends Controller
             $album=Album::findOrFail($id);
             $album->update($request->all());
 
-            return redirect('admin/album');
+            return redirect('/albums');
     }
 
     /*
@@ -122,7 +122,7 @@ class AdminController extends Controller
         //
         $album=Album::findOrFail($id);
         $album->delete($id);
-        return redirect('/admin');
+        return redirect('/albums');
 
     }
 }

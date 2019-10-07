@@ -89,8 +89,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Manage:</h6>
-                    <a class="collapse-item" href="{{route('album.create')}}">Add Album</a>
-                    <a class="collapse-item" href="{{route('album.index')}}">View Album</a>
+                    <a class="collapse-item" href="{{route('albums.create')}}">Add Album</a>
+                    <a class="collapse-item" href="{{route('albums.index')}}">View Album</a>
                 </div>
             </div>
         </li>

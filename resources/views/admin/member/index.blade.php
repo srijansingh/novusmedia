@@ -35,19 +35,19 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+
             </div>
-            <div class="sidebar-brand-text mx-3">Admin</div>
+            <div class="sidebar-brand-text mx-3">Novus Media</div>
         </a>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="{{url('/home')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
+                <span>Media Panel</span></a>
         </li>
 
         <!-- Divider -->
@@ -62,13 +62,13 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-tasks"></i>
-                <span>Manage Events</span>
+                <span>Album</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Manage:</h6>
-                    <a class="collapse-item" href="{{route('event.create')}}">Add New Event</a>
-                    <a class="collapse-item" href="{{route('event.index')}}">View Events</a>
+                    <h6 class="collapse-header">Manage:</h6>
+                    <a class="collapse-item" href="{{route('albums.create')}}">Add Album</a>
+                    <a class="collapse-item" href="{{route('albums.index')}}">View Album</a>
                 </div>
             </div>
         </li>
@@ -76,13 +76,13 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                 <i class="fas fa-fw fa-wrench"></i>
-                <span>Manage Sponsorships</span>
+                <span>Photos</span>
             </a>
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Manage:</h6>
-                    <a class="collapse-item" href="{{route('sponsor.create')}}">Add Sponsors</a>
-                    <a class="collapse-item" href="{{route('sponsor.index')}}">View Sponsors</a>
+                    <h6 class="collapse-header">Manage:</h6>
+                    <a class="collapse-item" href="{{route('gallery.create')}}">Add Photos</a>
+                    <a class="collapse-item" href="{{route('gallery.index')}}">View Photos</a>
                 </div>
             </div>
         </li>
@@ -90,38 +90,17 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapseUtilities">
                 <i class="fas fa-fw fa-wrench"></i>
-                <span>Social Media</span>
+                <span>Regisrations</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Manage:</h6>
-                    <a class="collapse-item" href="{{route('media.index')}}">Social Links</a>
-                </div>
-            </div>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Students</span>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Manage:</h6>
-                    <a class="collapse-item" href="{{route('student.index')}}">Registrations</a>
+                    <h6 class="collapse-header">Manage:</h6>
+                    <a class="collapse-item" href="{{route('customer.index')}}">Customers</a>
                 </div>
             </div>
         </li>
 
 
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-            <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
 
     </ul>
     <!-- End of Sidebar -->
@@ -136,7 +115,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white  mb-5 shadow-sm">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/home') }}">
-                        Darpan
+                       NOVUS MEDIA
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
@@ -189,7 +168,7 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Sponsorship</h1>
+                <h1 class="h3 mb-2 text-gray-800">Team Novus Media</h1>
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
@@ -201,9 +180,7 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Sponsor Id</th>
-                                    <th>Sponsor Name</th>
-                                    <th>Image</th>
+                                    <th>Member Name</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -215,17 +192,14 @@
                                  </tr>
                                  </tfoot>--}}
                                 <tbody>
-                                @foreach( $sponsor as $sponsors)
+                                @foreach( $member as $members)
                                     <tr>
-                                        <td>{{$sponsors->id}}</td>
-                                        <td>{{$sponsors->name}}</td>
-                                        <td>Not Found</td>
+
+                                        <td>{{$members->membername}}</td>
+
                                         <td>
-                                            {{--                                            <a href="{{route('event.edit',$event->id)}}" class="btn btn-primary btn-circle">--}}
-                                            {{--                                                <i class="fas fa-edit"></i>--}}
-                                            {{--                                            </a>--}}
-                                            <a href="{{route('sponsor.show',$sponsors->id)}}" class="btn btn-success btn-circle">
-                                                <i class="fas fa-eye"></i>
+                                            <a href="{{route('member.show',$members->id)}}" class="btn btn-success">
+                                                <i class="fas fa-eye"> &nbsp;&nbsp; Details</i>
                                             </a>
                                         </td>
                                     </tr>
